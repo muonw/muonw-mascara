@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "mascons";
+    src: url("/@muonw/mascara/icons/mascons.woff2?2a0f029e0d078dc469dcdb1c9f047f0c") format("woff2");
+}
+
+i[class^="mascon-"]:before, i[class*=" mascon-"]:before {
+    font-family: mascons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mascon-chevron-down:before {
+    content: "\f101";
+}
+.mascon-chevron-up:before {
+    content: "\f102";
+}

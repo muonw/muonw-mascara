@@ -1,0 +1,61 @@
+@use '../lib/styles/index';
+@use '../lib/styles/base';
+@use 'sass:map';
+@import '../../static/@muonw/mascara/icons/mascons';
+
+$light_root: (
+    --colors-demo-top-bar-background: #{map.get(base.$color-light_root, --colors-body-background)} + ee,
+);
+
+
+$dark_root: (
+    --colors-demo-top-bar-background: #{map.get(base.$color-dark_root, --colors-body-background)} + ee,
+);
+
+
+:root, :root[data-color-scheme=light] {
+    @each $key, $val in $light_root {
+        #{$key}: $val;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        @each $key, $val in $dark_root {
+            #{$key}: $val;
+        }
+    }
+}
+
+:root[data-color-scheme=dark] {
+    @each $key, $val in $dark_root {
+        #{$key}: $val;
+    }
+}
+
+
+body {
+    margin: 0;
+}
+
+#demo-page-top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    padding: .5rem;
+    background-color: var(--colors-demo-top-bar-background);
+    box-shadow: 0 1px 3px 0 rgba(140, 140, 140, .4);
+}
+
+#demo-page-main-content {
+    margin: .5rem;
+}
+
+#switch-to-light-mode {
+    display: var(--dark-mode-display);
+    cursor: pointer;
+}
+#switch-to-dark-mode {
+    display: var(--light-mode-display);
+    cursor: pointer;
+}

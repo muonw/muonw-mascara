@@ -1,0 +1,147 @@
+
+$light_root: (
+    --light-mode-display: initial,
+    --dark-mode-display: none,
+    --color-scheme: light,
+
+    --colors-positive: #ffffff,
+    --colors-negative: #000000,
+    
+    --colors-body-background: #ffffff,
+    --colors-body: #000000,
+    --colors-a: #0000ff,
+
+    --colors-input-background: #ffffff,
+    --colors-input: #000000,
+    --colors-input-disabled-background: #f4f4f4,
+    --colors-input-disabled: #a7a7a7,
+    --colors-input-border: #b4b4b4,
+    --colors-input-focused-border: #167bff,
+    --colors-input-focused-shadow: #91c1ff,
+    --colors-input-invalid-border: #ff1616,
+    --colors-input-invalid-shadow: #ff9191,
+    --colors-input-invalid-background: rgba(255, 0, 0, 0.051),
+
+    --colors-input-label: #777777,
+    --colors-input-disabled-label: #777777,
+    
+    --colors-button-background-gradient: linear-gradient(to top, #d6d6d6 0%, #e7e7e7 52%, #f3f3f3 100%),
+    --colors-button-disabled-background-gradient: linear-gradient(to top, #e2e2e2 0%, #e7e7e7 52%, #f3f3f3 100%),
+    --colors-button-border: #cfcfcf,
+    --colors-button-active-background-gradient: linear-gradient(to top, #f3f3f3 0%, #e7e7e7 52%, #d6d6d6 100%),
+    --colors-button-active-background: #d6d6d6,
+    --colors-button-hover-border: #9b9b9b,
+    --colors-button-hover-shadow: #919191,
+    
+    /* components/_accordion.scss */
+    --colors-accordion-background: #ffffff,
+    --colors-accordion-border: rgba(34, 36, 38, .15),
+    --colors-accordion-item-background-focus: #f5f5f5,
+    
+    /* utils */
+    --colors-utils-code-background: #f0f0f0,
+    --colors-utils-code-border: #c5c5c5,
+);
+
+$dark_root: (
+    --light-mode-display: none,
+    --dark-mode-display: initial,
+    --color-scheme: dark,
+
+    --colors-positive: #000000,
+    --colors-negative: #ffffff,
+
+    --colors-body-background: #181818,
+    --colors-body: #cccccc,
+    --colors-a: #60abfb,
+    
+    --colors-input-background: #181818,
+    --colors-input: #cccccc,
+    --colors-input-disabled-background: #303030,
+    --colors-input-disabled: #808080,
+    --colors-input-border: #555555,
+    --colors-input-focused-border: #3dbefd,
+    --colors-input-focused-shadow: #00acff,
+    --colors-input-invalid-border: #fd433d,
+    --colors-input-invalid-shadow: #ff0000,
+    --colors-input-invalid-background: rgba(255, 0, 0, 0.233),
+    
+    --colors-input-label: #868686,
+    --colors-input-disabled-label: #969696,
+
+    --colors-button-background-gradient: linear-gradient(to top, #1a1a1a 0%, #252525 52%, #3a3a3a 100%),
+    --colors-button-disabled-background-gradient: linear-gradient(to top, #303030 0%, #363636 52%, #3b3b3b 100%),
+    --colors-button-border: #464646,
+    --colors-button-active-background-gradient: linear-gradient(to top, #3a3a3a 0%, #252525 52%, #1a1a1a 100%),
+    --colors-button-active-background: #5c5c5c,
+    --colors-button-hover-border: #7c7c7c,
+    --colors-button-hover-shadow: #949494,
+    
+    /* components/_accordion.scss */
+    --colors-accordion-background: #1f1f1f,
+    --colors-accordion-border: rgba(173, 173, 173, 0.30),
+    --colors-accordion-item-background-focus: #333333,
+    
+    /* utils */
+    --colors-utils-code-background: #333333,
+    --colors-utils-code-border: #585858,
+);
+
+
+:root, :root[data-color-scheme=light] {
+    @each $key, $val in $light_root {
+        #{$key}: $val;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        @each $key, $val in $dark_root {
+            #{$key}: $val;
+        }
+    }
+}
+
+:root[data-color-scheme=dark] {
+    @each $key, $val in $dark_root {
+        #{$key}: $val;
+    }
+}
+
+$positive: var(--colors-positive);
+$negative: var(--colors-negative);
+$scheme: var(--color-scheme);
+
+$body-background: var(--colors-body-background);
+$body: var(--colors-body);
+
+$a: var(--colors-a);
+
+$input-background: var(--colors-input-background);
+$input: var(--colors-input);
+$input-disabled-background: var(--colors-input-disabled-background);
+$input-disabled: var(--colors-input-disabled);
+$input-border: var(--colors-input-border);
+$input-focused-border: var(--colors-input-focused-border);
+$input-focused-shadow: var(--colors-input-focused-shadow);
+$input-invalid-border: var(--colors-input-invalid-border);
+$input-invalid-shadow: var(--colors-input-invalid-shadow);
+$input-invalid-background: var(--colors-input-invalid-background);
+
+$input-label: var(--colors-input-label);
+$input-disabled-label: var(--colors-input-disabled-label);
+
+$button-background-gradient: var(--colors-button-background-gradient);
+$button-disabled-background-gradient: var(--colors-button-disabled-background-gradient);
+$button-border: var(--colors-button-border);
+$button-active-background-gradient: var(--colors-button-active-background-gradient);
+$button-active-background: var(--colors-button-active-background);
+$button-hover-border: var(--colors-button-hover-border);
+$button-hover-shadow: var(--colors-button-hover-shadow);
+
+$accordion-background: var(--colors-accordion-background);
+$accordion-border: var(--colors-accordion-border);
+$accordion-item-background-focus: var(--colors-accordion-item-background-focus);
+
+$utils-code-background: var(--colors-utils-code-background);
+$utils-code-border: var(--colors-utils-code-border);

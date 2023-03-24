@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/mascara/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<style>
+		@media screen and (prefers-color-scheme: dark) {
+			body {
+				background: #1e1e1e;
+			}
+		}
+		</style>
+		<meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="/mascara/_app/immutable/entry/start.508e0bee.js">
+		<link rel="modulepreload" href="/mascara/_app/immutable/chunks/index.dc499b55.js">
+		<link rel="modulepreload" href="/mascara/_app/immutable/chunks/singletons.e9f4ac11.js">
+		<link rel="modulepreload" href="/mascara/_app/immutable/entry/app.e084f4bf.js">
+	</head>
+	<body>
+		<div>
+			<script>
+				{
+					__sveltekit_1q35ji0 = {
+						env: {},
+						assets: "/mascara",
+						element: document.currentScript.parentElement
+					};
+
+					Promise.all([
+						import("/mascara/_app/immutable/entry/start.508e0bee.js"),
+						import("/mascara/_app/immutable/entry/app.e084f4bf.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_1q35ji0.element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

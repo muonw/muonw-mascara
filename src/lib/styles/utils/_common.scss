@@ -1,0 +1,28 @@
+@use '../base';
+
+a{
+    text-decoration: none;
+    color: base.$color-a;
+}
+
+h4{
+    margin: .7rem 0;
+}
+
+code{
+    display: inline-block;
+    // font-size: small;
+    background-color: base.$color-utils-code-background;
+    border-radius: 3px;
+    box-shadow: 0 0 0px 1px base.$color-utils-code-border;
+    padding: .05rem .15rem;
+    line-height: 1.0rem;
+    min-height: 1.0rem;
+}
+
+hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}

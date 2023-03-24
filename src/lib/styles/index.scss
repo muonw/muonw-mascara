@@ -1,0 +1,37 @@
+@use 'base';
+@use 'utils';
+@use 'functions';
+@use 'components/label';
+@use 'components/input';
+@use 'components/accordion';
+
+
+body {
+    font-family: base.$font-family-body;
+    font-size: .9rem;
+    background-color: base.$color-body-background;
+    color: base.$color-body;
+}
+
+.circle-spinner {
+    --size: 60px;
+    --color: #2d82c7;
+    --duration: 0.75s;
+    height: var(--size);
+    width: var(--size);
+    border-color: var(--color) transparent var(--color) var(--color);
+    border-width: calc(var(--size) / 15);
+    border-style: solid;
+    border-image: initial;
+    border-radius: 50%;
+    animation: var(--duration) linear 0s infinite normal none running circle-spinner-rotate;
+}
+
+@keyframes circle-spinner-rotate {
+    0% {
+     transform:rotate(0)
+    }
+    100% {
+     transform:rotate(360deg)
+    }
+}

@@ -1,0 +1,19 @@
+.icon{
+    &.dropdown{
+        &::before{
+            transition: transform .1s linear;
+            display: inline-flex;
+            justify-self: center;
+        }
+    }
+}
+
+.collapsed{
+    .icon{
+        &.dropdown{
+            &::before{
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

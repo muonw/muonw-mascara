@@ -1,0 +1,95 @@
+@use '../base';
+
+label {
+    &:not(.native) {
+        display: inline-block;
+    }
+}
+
+label.embedded{
+    line-height: .1rem;
+
+    .label-text{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: max-content;
+        height: .5rem;
+        line-height: .55rem;
+        background-color: base.$color-input-background;
+        border-radius: 2px 2px 0 0;
+        transform: translateX(5px) translateY(2px);
+        color: base.$color-input-label;
+        position: relative;
+        z-index: 1;
+    
+        span{
+            display: inline-flex;
+            white-space: nowrap;
+            padding: 0 2px;
+            transform: translateY(2px);
+            font-size: .75rem;
+        }
+    }
+
+    &:focus-within{
+        .label-text{
+            span{
+                color: base.$color-input-focused-border;
+            }
+        }
+    }
+
+    &:has(input:invalid),
+    &:has(textarea:invalid),
+    &:has(select:invalid) {
+        .label-text{
+            span{
+                color: base.$color-input-invalid-border;
+            }
+        }
+    }
+}
+
+label:has(input:disabled).embedded .label-text,
+label:has(textarea:disabled).embedded .label-text,
+label:has(select:disabled).embedded .label-text{
+    background-color: base.$color-input-disabled-background;
+    color: base.$color-input-disabled-label;
+}
+
+label:has(input.lean).embedded .label-text{
+    span{
+        transform: translateY(1px);
+        font-size: .7rem;
+    }
+}
+
+label:has(input.compact).embedded .label-text{
+    span{
+        transform: translateY(0px);
+        font-size: .65rem;
+    }
+}
+
+/* Firefox 111.0b2 */
+label.embedded.ff_disabled .label-text{
+    background-color: base.$color-input-disabled-background;
+    color: base.$color-input-disabled-label;
+}
+
+/* Firefox 111.0b2 */
+label.embedded.ff_lean .label-text{
+    span{
+        transform: translateY(1px);
+        font-size: .7rem;
+    }
+}
+
+/* Firefox 111.0b2 */
+label.embedded.ff_compact .label-text{
+    span{
+        transform: translateY(0px);
+        font-size: .65rem;
+    }
+}
