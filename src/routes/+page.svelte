@@ -27,7 +27,7 @@ onMount(() => {
 
 <nav id="demo-page-top-bar">
     <a href="/mascara/">Home</a> | 
-    <a href="https://github.com/muonw/mascara">GitHub</a> | 
+    <a href="https://github.com/muonw/muonw-mascara">GitHub</a> | 
     <span id='switch-to-light-mode' title="Light Mode" on:click={()=>switchColorScheme('light')} on:keypress={()=>switchColorScheme('light')}>☀️</span>
     <span id='switch-to-dark-mode' title="Dark Mode" on:click={()=>switchColorScheme('dark')} on:keypress={()=>switchColorScheme('dark')}>🌙</span>
 </nav>
