@@ -1,4 +1,4 @@
-![MuonW Mascara](https://github.com/muonw/muonw-mascara/raw/main/app/src/data/mascara_200x142.png)
+![MuonW Mascara](https://raw.githubusercontent.com/muonw/muonw-mascara/v0.1.11/src/data/mascara_200x142.png)
 
 # Mascara
 
