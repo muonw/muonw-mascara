@@ -52,6 +52,7 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
         try {
             await asyncTransitionEnd();
             node.style.height = 'auto';
+            node.setAttribute('data-transition_end', 'open');
         } catch(err) {
             // Interrupted by a close transition
         }
@@ -82,6 +83,7 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
         try {
             await asyncTransitionEnd();
             node.style.visibility = 'hidden';
+            node.setAttribute('data-transition_end', 'close');
         } catch(err) {
             // Interrupted by an open transition
         }

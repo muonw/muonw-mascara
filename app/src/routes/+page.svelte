@@ -311,6 +311,16 @@ onMount(() => {
 <br>
 
 <div class="accordion">
+    <AccordionItem header="Single Accordion Item With Custom Events" options={{open: false}} on:BeforeTransition={(d) => alert('"BeforeTransition" Custom Event')} on:AfterTransition={(d) => alert('"AfterTransition" Custom Event')}>
+        <div>
+            Content
+        </div>
+    </AccordionItem>
+</div>
+
+<br>
+
+<div class="accordion">
     <AccordionItem header="Grouped Accordion Items - Item 1" options={{open: false}}>
         <div>
             Content
