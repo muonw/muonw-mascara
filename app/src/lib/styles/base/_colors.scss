@@ -10,6 +10,7 @@ $light_root: (
     --colors-body-background: #ffffff,
     --colors-body: #000000,
     --colors-a: #0000ff,
+    --colors-hr: rgba(0, 0, 0, 0.15),
 
     --colors-input-background: #ffffff,
     --colors-input: #000000,
@@ -54,7 +55,8 @@ $dark_root: (
     --colors-body-background: #181818,
     --colors-body: #cccccc,
     --colors-a: #60abfb,
-    
+    --colors-hr: rgba(255, 255, 255, 0.15),
+
     --colors-input-background: #181818,
     --colors-input: #cccccc,
     --colors-input-disabled-background: #303030,
