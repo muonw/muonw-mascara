@@ -1,7 +1,7 @@
 {
 	"name": "@muonw/mascara",
 	"description": "Styling tools for MuonW projects",
-	"version": "0.1.12",
+	"version": "0.2.1",
 	"publishConfig": {
 		"registry": "https://node.pkgreg.com"
 	},
@@ -13,15 +13,12 @@
 		"type": "git",
 		"url": "https://github.com/muonw/muonw-mascara.git"
 	},
-	"license": "muonw-0",
+	"license": "unenforceable",
 	"scripts": {
 		"dev": "vite dev",
 		"buildLocal": "vite build --mode=development && rm -rf ../_docs && mv docs _docs && mv _docs ../",
 		"buildProduction": "vite build --mode=production && rm -rf ../docs && mv docs ../",
 		"package": "svelte-kit sync && svelte-package",
-		"publishLocal": "../_/NPM_REGISTRY_LOCAL",
-		"resetLocal": "../_/NPM_REGISTRY_LOCAL_RESET",
-		"publishPublic": "../_/NPM_REGISTRY_PUBLIC",
 		"preview": "vite preview",
 		"prepublishOnly": "if [ -z $MU_NPM_PERMIT ]; then echo 'Please use `publishLocal` or `publishPublic`' && exit 1; fi",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -38,22 +35,22 @@
 		"./*": "./*"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.8.6",
+		"@sveltejs/adapter-static": "^2.0.2",
+		"@sveltejs/kit": "^1.18.0",
 		"@sveltejs/package": "^2.0.2",
-		"@typescript-eslint/eslint-plugin": "^5.54.0",
-		"@typescript-eslint/parser": "^5.54.0",
-		"eslint": "^8.35.0",
-		"eslint-config-prettier": "^8.6.0",
+		"@typescript-eslint/eslint-plugin": "^5.59.6",
+		"@typescript-eslint/parser": "^5.59.6",
+		"eslint": "^8.41.0",
+		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.8.4",
-		"prettier-plugin-svelte": "^2.9.0",
-		"sass": "^1.58.3",
-		"svelte": "^3.55.1",
-		"svelte-check": "^3.0.4",
-		"tslib": "^2.5.0",
-		"typescript": "^4.9.5",
-		"vite": "^4.1.4"
+		"prettier": "^2.8.8",
+		"prettier-plugin-svelte": "^2.10.0",
+		"sass": "^1.62.1",
+		"svelte": "^3.59.1",
+		"svelte-check": "^3.3.2",
+		"tslib": "^2.5.2",
+		"typescript": "^5.0.4",
+		"vite": "^4.3.8"
 	},
 	"svelte": "./index.js",
 	"types": "./index.d.ts",

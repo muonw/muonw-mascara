@@ -4,7 +4,6 @@ import collapse from '$lib/scripts/collapse';
 
 const dispatch = createEventDispatcher();
 
-export let header: string;
 export let options: Record<string,any>;
 
 let collapsibleEl: HTMLDivElement;
@@ -29,13 +28,13 @@ onMount(() => {
 
 <div class="item">
     <button class="native header" class:collapsed={!options.open} on:click={(e) => toggle(e)}>
-        {header}
+        <slot name="header"></slot>
         <i class="icon dropdown mascon-chevron-down"></i>
     </button>
 
     <div use:collapse={{ open: options.open }} bind:this={collapsibleEl}>
         <div class="content">
-            <slot></slot>
+            <slot name="content"></slot>
         </div>
     </div>
 </div>

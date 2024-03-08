@@ -16,8 +16,8 @@ npm config set @muonw:registry https://node.pkgreg.com/ -L project
 
 ```sh
 npm i -D @muonw/mascara --save-exact
-npm i -D sass@1.58.3
-npm i -D svelte@3.55.1
+npm i -D sass@1.62.1
+npm i -D svelte@3.59.1
 ```
 
 ❸ In order for icons to appear correctly, the files inside Mascara's `icons` directory need to become accessible from the browser. You can either manually copy them to your assets folder and adjust the font link(s) in the `.css` file(s), or run the following commands to automate this process:

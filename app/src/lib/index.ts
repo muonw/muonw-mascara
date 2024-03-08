@@ -1,2 +1,7 @@
-// Reexport your entry components here
-export {}
+import {
+    default as AccordionItem,
+} from './components/AccordionItem.svelte';
+
+export {
+    AccordionItem,
+};

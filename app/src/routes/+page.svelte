@@ -26,10 +26,14 @@ onMount(() => {
 </script>
 
 <nav id="demo-page-top-bar">
-    <a href="/muonw-mascara/">Home</a> | 
-    <a href="https://github.com/muonw/muonw-mascara">GitHub</a> | 
-    <span id='switch-to-light-mode' title="Light Mode" on:click={()=>switchColorScheme('light')} on:keypress={()=>switchColorScheme('light')}>☀️</span>
-    <span id='switch-to-dark-mode' title="Dark Mode" on:click={()=>switchColorScheme('dark')} on:keypress={()=>switchColorScheme('dark')}>🌙</span>
+    <div>
+        <a href="/muonw-mascara/">Home</a> | 
+        <a href="https://github.com/muonw/muonw-mascara">GitHub</a>
+    </div>
+    <div>
+        <button class="a compact" id='switch-to-light-mode' title="Light Mode" on:click={()=>switchColorScheme('light')}>☀️</button>
+        <button class="a compact" id='switch-to-dark-mode' title="Dark Mode" on:click={()=>switchColorScheme('dark')}>🌙</button>
+    </div>
 </nav>
 
 <div id="demo-page-main-content">
@@ -301,8 +305,11 @@ onMount(() => {
 <h3>Accordion Item</h3>
 
 <div class="accordion">
-    <AccordionItem header="Single Accordion Item" options={{open: false}}>
-        <div>
+    <AccordionItem options={{open: false}}>
+        <div slot="header">
+            Single Accordion Item
+        </div>
+        <div slot="content">
             Content
         </div>
     </AccordionItem>
@@ -311,8 +318,14 @@ onMount(() => {
 <br>
 
 <div class="accordion">
-    <AccordionItem header="Single Accordion Item With Custom Events" options={{open: false}} on:BeforeTransition={(d) => alert('"BeforeTransition" Custom Event')} on:AfterTransition={(d) => alert('"AfterTransition" Custom Event')}>
-        <div>
+    <AccordionItem options={{open: true}}>
+        <div slot="header">
+            Single Accordion Item With Sub-header And Open By Default
+            <div style="text-align:left; font-size:small; font-weight:normal; margin-top:.5rem;">
+                Sub header
+            </div>
+        </div>
+        <div slot="content">
             Content
         </div>
     </AccordionItem>
@@ -321,18 +334,40 @@ onMount(() => {
 <br>
 
 <div class="accordion">
-    <AccordionItem header="Grouped Accordion Items - Item 1" options={{open: false}}>
-        <div>
+    <AccordionItem options={{open: false}} on:BeforeTransition={(d) => alert('"BeforeTransition" Custom Event')} on:AfterTransition={(d) => alert('"AfterTransition" Custom Event')}>
+        <div slot="header">
+            Single Accordion Item With Custom Events
+        </div>
+        <div slot="content">
             Content
         </div>
     </AccordionItem>
-    <AccordionItem header="Grouped Accordion Items - Item 2" options={{open: false}}>
-        <div>
+</div>
+
+<br>
+
+<div class="accordion">
+    <AccordionItem options={{open: false}}>
+        <div slot="header">
+            Grouped Accordion Items - Item 1
+        </div>
+        <div slot="content">
             Content
         </div>
     </AccordionItem>
-    <AccordionItem header="Grouped Accordion Items - Item 3" options={{open: false}}>
-        <div>
+    <AccordionItem options={{open: false}}>
+        <div slot="header">
+            Grouped Accordion Items - Item 2
+        </div>
+        <div slot="content">
+            Content
+        </div>
+    </AccordionItem>
+    <AccordionItem options={{open: false}}>
+        <div slot="header">
+            Grouped Accordion Items - Item 3
+        </div>
+        <div slot="content">
             Content
         </div>
     </AccordionItem>
