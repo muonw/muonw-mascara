@@ -70,9 +70,3 @@ Now, add the following lines in yor global scss file (note that depending on how
 @use '@muonw/mascara/styles/index.scss';
 @import 'static/@muonw/mascara/icons/mascons';
 ```
-
-<hr>
-
-License:
-
-https://dev.muonw.com/license/muonw-0/

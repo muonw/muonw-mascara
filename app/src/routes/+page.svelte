@@ -1,5 +1,6 @@
 <script lang="ts">
 import AccordionItem from "$lib/components/AccordionItem.svelte";
+import { base } from '$app/paths';
 import { onMount} from "svelte";
 import "../styles/demo.scss";
 
@@ -27,7 +28,7 @@ onMount(() => {
 
 <nav id="demo-page-top-bar">
     <div>
-        <a href="/muonw-mascara/">Home</a> | 
+        <a href="{base}/">Home</a> | 
         <a href="https://github.com/muonw/muonw-mascara">GitHub</a>
     </div>
     <div>
@@ -321,7 +322,7 @@ onMount(() => {
     <AccordionItem options={{open: true}}>
         <div slot="header">
             Single Accordion Item With Sub-header And Open By Default
-            <div style="text-align:left; font-size:small; font-weight:normal; margin-top:.5rem;">
+            <div style="font-size:small; font-weight:normal; margin-top:.5rem;">
                 Sub header
             </div>
         </div>
