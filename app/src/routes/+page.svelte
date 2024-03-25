@@ -69,8 +69,6 @@ onMount(() => {
     &nbsp;
 {/each}
 
-<br>
-
 <h4>Class: "a"</h4>
 {#each sizeClasses as size}
     <button class="a {size}">{size}</button>
@@ -309,6 +307,19 @@ onMount(() => {
     <AccordionItem options={{open: false}}>
         <div slot="header">
             Single Accordion Item
+        </div>
+        <div slot="content">
+            Content
+        </div>
+    </AccordionItem>
+</div>
+
+<br>
+
+<div class="accordion">
+    <AccordionItem options={{open: false, headerTag: 'a', headerUrl: '/#custom-link'}}>
+        <div slot="header">
+            Single Accordion Item Using &lt;a&gt; Tag with inner <a href="/#tag-link" on:click={()=>alert('link clicked!')}>link</a> and <button class="btn compact" on:click={()=>alert('button clicked!')}>button</button>
         </div>
         <div slot="content">
             Content

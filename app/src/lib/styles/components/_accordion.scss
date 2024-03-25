@@ -37,12 +37,13 @@
     color: inherit;
     text-align: left;
     align-items: center;
+    box-sizing: border-box;
 
     &:focus {
         outline: 0;
         background-color: base.$color-accordion-item-background-focus;
     }
 }
-.accordion .content{ 
+.accordion .content > *{ 
     padding: .5rem;
 }

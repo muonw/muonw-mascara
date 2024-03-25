@@ -33,15 +33,24 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
         return `height ${params.duration}s ${params.easing}`;
     }
 
+    function setOverflow() {
+        node.style.overflowX = 'inherit';
+        node.style.overflowY = 'clip';
+    }
+
+    function unsetOverflow() {
+        node.style.overflowX = 'inherit';
+        node.style.overflowY = 'inherit';
+    }
+
     // Set initial styles
-    node.style.overflowX = 'auto';
-    node.style.overflowY = 'hidden';
     node.style.transition = transition();
     node.style.height = params.open ? 'auto' : '0px';
     // Change the visibility to disable/enable focus by tab key inside the collapsed element
     node.style.visibility = params.open ? 'visible' : 'hidden';
     
     async function open() {
+        setOverflow();
         node.style.visibility = 'visible';
         // Height is already in pixels
         // Start the transition
@@ -53,6 +62,7 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
             await asyncTransitionEnd();
             node.style.height = 'auto';
             node.setAttribute('data-transition_end', 'open');
+            unsetOverflow();
         } catch(err) {
             // Interrupted by a close transition
         }
@@ -60,6 +70,8 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
 
     async function close() {
         if (node.style.height === 'auto') {
+            setOverflow();
+
             // Temporarily turn transitions off
             node.style.transition = 'none';
             await nextFrame();
@@ -84,6 +96,7 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
             await asyncTransitionEnd();
             node.style.visibility = 'hidden';
             node.setAttribute('data-transition_end', 'close');
+            unsetOverflow();
         } catch(err) {
             // Interrupted by an open transition
         }

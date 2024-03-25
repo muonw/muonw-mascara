@@ -1,7 +1,7 @@
 {
 	"name": "@muonw/mascara",
 	"description": "Styling tools for MuonW projects",
-	"version": "0.2.2",
+	"version": "0.4.1",
 	"publishConfig": {
 		"registry": "https://node.pkgreg.com"
 	},
