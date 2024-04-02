@@ -50,6 +50,11 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
     node.style.visibility = params.open ? 'visible' : 'hidden';
     
     async function open() {
+        // If already open, skip processing to avoid changing the height
+        if (node.getAttribute('data-transition_end') === 'open') {
+            return;
+        }
+        
         setOverflow();
         node.style.visibility = 'visible';
         // Height is already in pixels
@@ -69,6 +74,11 @@ export default function collapse (node: HTMLElement, params: Record<string,any>)
     }
 
     async function close() {
+        // If already closed, skip processing to avoid changing the height
+        if (node.getAttribute('data-transition_end') === 'close') {
+            return;
+        }
+
         if (node.style.height === 'auto') {
             setOverflow();
 
